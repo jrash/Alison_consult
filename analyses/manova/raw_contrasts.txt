@@ -1,0 +1,119 @@
+#--------------contrast 1
+
+> linearHypothesis(lmfit, "SmokeFormer Smoker = SmokeNever Smoked",verbose=T)
+
+Hypothesis matrix:
+                                       (Intercept) SmokeFormer Smoker SmokeNever Smoked
+SmokeFormer Smoker = SmokeNever Smoked           0                  1                -1
+
+Right-hand-side matrix:
+                                       X1200 X600 X500 X100
+SmokeFormer Smoker = SmokeNever Smoked     0    0    0    0
+
+Estimated linear function (hypothesis.matrix %*% coef - rhs):
+    X1200      X600      X500      X100 
+0.1695218 4.1519222 3.5278696 1.8982707 
+
+
+Sum of squares and products for the hypothesis:
+           X1200      X600      X500       X100
+X1200  0.5172773  12.66914  10.76491   5.792368
+X600  12.6691412 310.29224 263.65392 141.866500
+X500  10.7649122 263.65392 224.02555 120.543326
+X100   5.7923675 141.86650 120.54333  64.861769
+
+Sum of squares and products for error:
+          X1200       X600     X500      X100
+X1200 5561.6108  4939.0469 1187.822  394.1096
+X600  4939.0469 13684.5743 3631.732  494.5638
+X500  1187.8221  3631.7324 5013.862 1023.9649
+X100   394.1096   494.5638 1023.965  881.3692
+
+Multivariate Tests: 
+                 Df test stat approx F num Df den Df   Pr(>F)  
+Pillai            1 0.0930924 2.232597      4     87 0.071985 .
+Wilks             1 0.9069076 2.232597      4     87 0.071985 .
+Hotelling-Lawley  1 0.1026481 2.232597      4     87 0.071985 .
+Roy               1 0.1026481 2.232597      4     87 0.071985 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+#-------------contrast 2
+
+> linearHypothesis(lmfit, "SmokeFormer Smoker",verbose=T)
+
+Hypothesis matrix:
+                   (Intercept) SmokeFormer Smoker SmokeNever Smoked
+SmokeFormer Smoker           0                  1                 0
+
+Right-hand-side matrix:
+                   X1200 X600 X500 X100
+SmokeFormer Smoker     0    0    0    0
+
+Estimated linear function (hypothesis.matrix %*% coef - rhs):
+     X1200       X600       X500       X100 
+ 3.4979118 13.7768349  0.2305793  0.4136619 
+
+
+Sum of squares and products for the hypothesis:
+           X1200       X600       X500       X100
+X1200 101.647828  400.34896  6.7005375 12.0208398
+X600  400.348961 1576.80980 26.3906595 47.3451410
+X500    6.700537   26.39066  0.4416937  0.7924034
+X100   12.020840   47.34514  0.7924034  1.4215807
+
+Sum of squares and products for error:
+          X1200       X600     X500      X100
+X1200 5561.6108  4939.0469 1187.822  394.1096
+X600  4939.0469 13684.5743 3631.732  494.5638
+X500  1187.8221  3631.7324 5013.862 1023.9649
+X100   394.1096   494.5638 1023.965  881.3692
+
+Multivariate Tests: 
+                 Df test stat approx F num Df den Df   Pr(>F)  
+Pillai            1 0.1322382 3.314482      4     87 0.014121 *
+Wilks             1 0.8677618 3.314482      4     87 0.014121 *
+Hotelling-Lawley  1 0.1523900 3.314482      4     87 0.014121 *
+Roy               1 0.1523900 3.314482      4     87 0.014121 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+#-------------contrast 3
+
+> linearHypothesis(lmfit, "SmokeNever Smoked",verbose=T)
+
+Hypothesis matrix:
+                  (Intercept) SmokeFormer Smoker SmokeNever Smoked
+SmokeNever Smoked           0                  0                 1
+
+Right-hand-side matrix:
+                  X1200 X600 X500 X100
+SmokeNever Smoked     0    0    0    0
+
+Estimated linear function (hypothesis.matrix %*% coef - rhs):
+    X1200      X600      X500      X100 
+ 3.328390  9.624913 -3.297290 -1.484609 
+
+
+Sum of squares and products for the hypothesis:
+           X1200      X600       X500       X100
+X1200  108.76759  314.5300 -107.75128  -48.51514
+X600   314.53000  909.5460 -311.59110 -140.29425
+X500  -107.75128 -311.5911  106.74448   48.06183
+X100   -48.51514 -140.2943   48.06183   21.63989
+
+Sum of squares and products for error:
+          X1200       X600     X500      X100
+X1200 5561.6108  4939.0469 1187.822  394.1096
+X600  4939.0469 13684.5743 3631.732  494.5638
+X500  1187.8221  3631.7324 5013.862 1023.9649
+X100   394.1096   494.5638 1023.965  881.3692
+
+Multivariate Tests: 
+                 Df test stat approx F num Df den Df   Pr(>F)  
+Pillai            1 0.1333379 3.346287      4     87 0.013458 *
+Wilks             1 0.8666621 3.346287      4     87 0.013458 *
+Hotelling-Lawley  1 0.1538523 3.346287      4     87 0.013458 *
+Roy               1 0.1538523 3.346287      4     87 0.013458 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
